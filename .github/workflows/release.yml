@@ -16,7 +16,7 @@ jobs:
         env:
           REPO: ${{ github.repository }}
       - name: Create Release
-        uses: actions/create-release@latest
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref }}
