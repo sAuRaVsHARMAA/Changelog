@@ -19,10 +19,12 @@ jobs:
         uses: actions/create-release@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: Release ${{ steps.changelog.outputs.tag }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
           body: | 
-            ${{steps.changelog.outputs.clean_changelog}}
+            Changes in this Release
+            - First Change
+            - Second Change
         with:
           draft: false
           prerelease: false
